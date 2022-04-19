@@ -1,0 +1,1 @@
+const ak: string = "ak";

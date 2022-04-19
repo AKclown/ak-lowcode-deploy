@@ -1,0 +1,49 @@
+{
+  "name": "ak-lowcode-deploy",
+  "version": "1.0.0",
+  "description": "组件发布",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git cz",
+    "dev": "npm run clean:build && npm run build:force --watch",
+    "build": "npm run clean:build && npm run build:force",
+    "build:force": "tsc --build --force --verbose",
+    "clean:build": "ts-node --skipProject ./scripts/clean-build.ts",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKclown/ak-lowcode-deploy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AKclown/ak-lowcode-deploy/issues"
+  },
+  "homepage": "https://github.com/AKclown/ak-lowcode-deploy#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/shelljs": "^0.8.11",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2",
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
