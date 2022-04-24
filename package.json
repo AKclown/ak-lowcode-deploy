@@ -1,15 +1,30 @@
 {
   "name": "ak-lowcode-deploy",
   "version": "1.0.0",
-  "description": "组件发布",
-  "main": "index.js",
+  "description": "低代码二开组件发布脚手架",
+  "packageManager": "yarn@3.1.1",
+  "private": false,
   "scripts": {
-    "commit": "git cz",
-    "dev": "npm run clean:build && npm run build:force --watch",
-    "build": "npm run clean:build && npm run build:force",
+    "preinstall": "yarn dlx only-allow yarn && husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "commit": "yarn dlx only-allow yarn && git cz",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint",
+    "dev": "yarn run clean:build && yarn run build:force --watch",
+    "build": "yarn run clean:build && yarn run build:force",
     "build:force": "tsc --build --force --verbose",
+    "clean": "yarn clean",
+    "clean:yarn-cache": "yarn cache clean --all",
     "clean:build": "ts-node --skipProject ./scripts/clean-build.ts",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "clean:node-modules": "ts-node --skipProject ./scripts/clean-node-modules.ts",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "yarn run lint:es && yarn run lint:prettier",
+    "lint:es": "eslint --ext .js,.jsx,.ts,.tsx ./ --cache",
+    "lint:prettier": "prettier --list-different \"**/*.{css,less,js,jsx,ts,tsx,json,yml,yaml,md}\"",
+    "fix": "yarn run fix:es && yarn run fix:prettier ",
+    "fix:es": "eslint --ext .js,.jsx,.ts,.tsx ./ --cache --fix",
+    "fix:prettier": "prettier --write \"**/*.{css,less,js,jsx,ts,tsx,json,yml,yaml,md}\""
   },
   "repository": {
     "type": "git",
@@ -30,6 +45,9 @@
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.4.0",
+    "pinst": "^3.0.0",
     "prettier": "^2.6.2",
     "shelljs": "^0.8.5",
     "ts-node": "^10.7.0",
@@ -38,12 +56,6 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }

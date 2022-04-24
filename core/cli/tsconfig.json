@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "./lib",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "./lib"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "core"
+}

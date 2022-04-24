@@ -1,0 +1,30 @@
+{
+  "name": "@ak-lowcode-deploy/cli",
+  "version": "0.0.0",
+  "description": "cli",
+  "author": "AKclown <13413629530@139.com>",
+  "homepage": "https://github.com/AKclown/ak-lowcode-deploy/tree/main/core/cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "bin": {
+    "ak-deploy": "lib/index.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKclown/ak-lowcode-deploy.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/AKclown/ak-lowcode-deploy/issues"
+  }
+}

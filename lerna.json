@@ -1,0 +1,12 @@
+{
+  "version": "0.0.0",
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": ["*.md", "*.zip", "__tests__/**", "**/__tests__/**"],
+      "message": "chore(release): publish to registry",
+      "registry": "https://registry.npmjs.org"
+    }
+  },
+  "packages": ["core/*"]
+}
