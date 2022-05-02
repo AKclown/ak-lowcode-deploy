@@ -11,7 +11,7 @@
     }
   ],
   // "include": ["src/**/*"],
-  "exclude": ["node_module", "scripts"],
+  "exclude": ["node_module", "scripts", "doc"],
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "ak"
 }

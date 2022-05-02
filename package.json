@@ -1,6 +1,7 @@
 {
   "name": "ak-lowcode-deploy",
   "version": "1.0.0",
+  "author": "AKclown",
   "description": "低代码二开组件发布脚手架",
   "packageManager": "yarn@3.1.1",
   "scripts": {
@@ -30,7 +31,6 @@
     "url": "git+https://github.com/AKclown/ak-lowcode-deploy.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AKclown/ak-lowcode-deploy/issues"
