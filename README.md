@@ -1,6 +1,6 @@
 ### 前期准备
 
-1. 代码规范(eslint | prettier)
+1. 代码规范(eslint | prettier) [tsLint](https://typescript-eslint.io/docs/linting/)
 
 2. 使用 TypeScript [TSC CI 编译](https://juejin.cn/post/6844904093568221191)
 
@@ -13,6 +13,10 @@
 6. 使用 tsconfig 下 references
 
 7. yarn2 管理 - 强制 yarn [参考文献](https://yarnpkg.com/configuration/yarnrc#npmRegistries)
+
+### TODO
+
+1. Tslint 未完成
 
 ### 组件发布脚手架需求
 

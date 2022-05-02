@@ -2,6 +2,7 @@
 .yarn/
 core/**/lib
 __tests__/coverage
+.husky/
 
 # if you are NOT using Zero-installs, then:
 # comment the following lines
